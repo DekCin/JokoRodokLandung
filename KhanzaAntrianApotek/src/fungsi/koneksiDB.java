@@ -42,14 +42,18 @@ public final class koneksiDB {
                         "  turunan. Susah cari jodoh sampai umur 50 tahun sampai 200 turunan.\n" +
                         "  Ya Alloh maafkan kami karena telah berdoa buruk, semua ini kami lakukan\n" +
                         "  karena kami tidak pernah rela karya kami dibajak tanpa ijin.\n\n"+
-                        "                                                                           \n"+
-                        "  #    ____  ___  __  __  ____   ____    _  __ _                              \n" +
-                        "  #   / ___||_ _||  \\/  ||  _ \\ / ___|  | |/ /| |__    __ _  _ __   ____ __ _ \n" +
-                        "  #   \\___ \\ | | | |\\/| || |_) |\\___ \\  | ' / | '_ \\  / _` || '_ \\ |_  // _` |\n" +
-                        "  #    ___) || | | |  | ||  _ <  ___) | | . \\ | | | || (_| || | | | / /| (_| |\n" +
-                        "  #   |____/|___||_|  |_||_| \\_\\|____/  |_|\\_\\|_| |_| \\__,_||_| |_|/___|\\__,_|\n" +
-                        "  #                                                                           \n"+
-                        "                                                                           \n"+
+                        "                                                                               \n"+
+                        "  #    ____  ___  __  __  ____   ____    _  __ _                               \n" +
+                        "  #   / ___||_ _||  \\/  ||  _ \\ / ___|  | |/ /| |__    __ _  _ __   ____ __ _    \n" +
+                        "  #   \\___ \\ | | | |\\/| || |_) |\\___ \\  | ' / | '_ \\  / _` || '_ \\ |_  // _` |  \n" +
+                        "  #    ___) || | | |  | ||  _ <  ___) | | . \\ | | | || (_| || | | | / /| (_| |        \n" +
+                        "  #   |____/|___||_|  |_||_| \\_\\|____/  |_|\\_\\|_| |_| \\__,_||_| |_|/___|\\__,_|   \n"+
+                       
+                        "  #     ____ _     ___ _____ _   _ _____ _____ _______                     \n" +
+                        "  #    / ___| |   |_ _| ____| \\ | |_   _| ____|_   _\\ \\                    \n" +
+                        "  #   | |   | |    | ||  _| |  \\| | | | |  _|   | |  \\ \\                   \n" +
+                        "  #   | |___| |___ | || |___| |\\  | | | | |___  | |  / /                   \n" +
+                        "  #    \\____|_____|___|_____|_| \\_| |_| |_____| |_| /_/                   \n" +
                         "  Licensi yang dianut di software ini https://en.wikipedia.org/wiki/Aladdin_Free_Public_License \n"+
                         "  Informasi dan panduan bisa dicek di halaman https://github.com/mas-elkhanza/SIMRS-Khanza/wiki \n"+
                         "                                                                           ");

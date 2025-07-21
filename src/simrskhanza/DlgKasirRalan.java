@@ -3381,43 +3381,11 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         });
         MnSuratSurat.add(MnCetakSuratBebasTBC);
 
-        MnCetakSuratSehat.setBackground(new java.awt.Color(255, 255, 254));
-        MnCetakSuratSehat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCetakSuratSehat.setForeground(new java.awt.Color(50, 50, 50));
-        MnCetakSuratSehat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSehat.setText("Surat Keterangan Sehat 1");
-        MnCetakSuratSehat.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        MnCetakSuratSehat.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        MnCetakSuratSehat.setName("MnCetakSuratSehat"); // NOI18N
-        MnCetakSuratSehat.setPreferredSize(new java.awt.Dimension(250, 26));
-        MnCetakSuratSehat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCetakSuratSehatActionPerformed(evt);
-            }
-        });
-        MnSuratSurat.add(MnCetakSuratSehat);
-
-        MnCetakSuratSehat1.setBackground(new java.awt.Color(255, 255, 254));
-        MnCetakSuratSehat1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCetakSuratSehat1.setForeground(new java.awt.Color(50, 50, 50));
-        MnCetakSuratSehat1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSehat1.setText("Surat Keterangan Sehat 2");
-        MnCetakSuratSehat1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        MnCetakSuratSehat1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        MnCetakSuratSehat1.setName("MnCetakSuratSehat1"); // NOI18N
-        MnCetakSuratSehat1.setPreferredSize(new java.awt.Dimension(250, 26));
-        MnCetakSuratSehat1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCetakSuratSehat1ActionPerformed(evt);
-            }
-        });
-        MnSuratSurat.add(MnCetakSuratSehat1);
-
         MnCetakSuratSehat2.setBackground(new java.awt.Color(255, 255, 254));
         MnCetakSuratSehat2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakSuratSehat2.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakSuratSehat2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSehat2.setText("Surat Keterangan Sehat 3");
+        MnCetakSuratSehat2.setText("Surat Keterangan Sehat RSDH");
         MnCetakSuratSehat2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MnCetakSuratSehat2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         MnCetakSuratSehat2.setName("MnCetakSuratSehat2"); // NOI18N
@@ -3465,7 +3433,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnCetakSuratSakitPihak2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakSuratSakitPihak2.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakSuratSakitPihak2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSakitPihak2.setText("Surat Cuti Sakit Pihak Ke 2");
+        MnCetakSuratSakitPihak2.setText("Surat Tunggu Pasien RSDH");
         MnCetakSuratSakitPihak2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MnCetakSuratSakitPihak2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         MnCetakSuratSakitPihak2.setName("MnCetakSuratSakitPihak2"); // NOI18N

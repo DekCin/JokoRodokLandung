@@ -564,22 +564,34 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         }
 }//GEN-LAST:event_TNoRwKeyPressed
 
-    private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpanActionPerformed
-        if(NoSurat.getText().trim().equals("")){
-            Valid.textKosong(NoSurat,"No.Surat");
-        }else if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
-            Valid.textKosong(TNoRw,"pasien");
-        }else{
-            if(Sequel.menyimpantf("surat_keterangan_rawat_inap","?,?,?,?","No.Surat",4,new String[]{
-                    NoSurat.getText(),TNoRw.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+"")
-                })==true){
-                tabMode.addRow(new Object[]{
-                    NoSurat.getText(),TNoRw.getText(),TNoRM.getText(),TPasien.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+"")
-                });
-                LCount.setText(""+tabMode.getRowCount());
-                emptTeks();
-            }
+   private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpanActionPerformed
+    if(NoSurat.getText().trim().equals("")){
+        Valid.textKosong(NoSurat,"No.Surat");
+    }else if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
+        Valid.textKosong(TNoRw,"pasien");
+    }else{
+        // Cek ulang agar tidak terjadi duplikasi NoSurat
+        if(Sequel.cariInteger("select count(*) from surat_keterangan_rawat_inap where no_surat='"+NoSurat.getText()+"'")>0){
+            String tglAwal = Valid.SetTgl(TanggalAwal.getSelectedItem()+"");
+            String kodeTanggal = TanggalAwal.getSelectedItem().toString().substring(6,10)+
+                                 TanggalAwal.getSelectedItem().toString().substring(3,5)+
+                                 TanggalAwal.getSelectedItem().toString().substring(0,2);
+            String prefix = "SKR" + kodeTanggal;
+            int nomor = Sequel.cariInteger("select ifnull(MAX(CONVERT(RIGHT(no_surat,3),signed)),0) from surat_keterangan_rawat_inap where tanggalawal='"+tglAwal+"'");
+            nomor++;
+            NoSurat.setText(prefix + String.format("%03d", nomor));
         }
+
+        if(Sequel.menyimpantf("surat_keterangan_rawat_inap","?,?,?,?","No.Surat",4,new String[]{
+                NoSurat.getText(),TNoRw.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+"")
+            })==true){
+            tabMode.addRow(new String[]{
+                NoSurat.getText(),TNoRw.getText(),TNoRM.getText(),TPasien.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+"")
+            });
+            LCount.setText(""+tabMode.getRowCount());
+            emptTeks();
+        }
+    }
 }//GEN-LAST:event_BtnSimpanActionPerformed
 
     private void BtnSimpanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnSimpanKeyPressed
@@ -903,7 +915,7 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
-                    tabMode.addRow(new Object[]{
+                    tabMode.addRow(new String[]{
                         rs.getString(1),rs.getString(2),rs.getString(3),
                         rs.getString(4),rs.getString(5),rs.getString(6)
                         
@@ -926,16 +938,24 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
     }
 
     public void emptTeks() {
-        TNoRw.setText("");
-        TNoRM.setText("");
-        TPasien.setText("");
-        NoSurat.setText("");
-        TanggalAwal.setDate(new Date());
-        TanggalAkhir.setDate(new Date());
-        Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(surat_keterangan_rawat_inap.no_surat,3),signed)),0) from surat_keterangan_rawat_inap where surat_keterangan_rawat_inap.tanggalawal='"+Valid.SetTgl(TanggalAwal.getSelectedItem()+"")+"' ",
-                "SKR"+TanggalAwal.getSelectedItem().toString().substring(6,10)+TanggalAwal.getSelectedItem().toString().substring(3,5)+TanggalAwal.getSelectedItem().toString().substring(0,2),3,NoSurat); 
-        NoSurat.requestFocus();
-    }
+		TNoRw.setText("");
+		TNoRM.setText("");
+		TPasien.setText("");
+		NoSurat.setText("");
+		TanggalAwal.setDate(new Date());
+		TanggalAkhir.setDate(new Date());
+
+		String tglAwal = Valid.SetTgl(TanggalAwal.getSelectedItem()+"");
+		String kodeTanggal = TanggalAwal.getSelectedItem().toString().substring(6,10) +
+							 TanggalAwal.getSelectedItem().toString().substring(3,5) +
+							 TanggalAwal.getSelectedItem().toString().substring(0,2);
+		String prefix = "SKR" + kodeTanggal;
+		int nomor = Sequel.cariInteger("select ifnull(MAX(CONVERT(RIGHT(no_surat,3),signed)),0) from surat_keterangan_rawat_inap where tanggalawal='"+tglAwal+"'");
+		nomor++;
+		NoSurat.setText(prefix + String.format("%03d", nomor));
+
+		NoSurat.requestFocus();
+	}
 
  
     private void getData() {
